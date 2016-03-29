@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TodoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Angular To Do List</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css">
+</head>
+<body ng-controller="TodoController">
+
+<main class="container">
+<h1>Add a new To Do</h1>
+
+<section>
+    <form>
+        <input ng-model="taskInput" />
+        <button class="btn btn-success" ng-click="add()">Add</button>
+    </form>
+</section>
+<section>
+    <h2><span>{{ todos.length }}</span> Current Todos</h2>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="todo in todos track by $index">
+            <span class="col-sm-4">{{ todo }}</span>
+            <button class="btn btn-danger" ng-click="delete()">Delete</button>
+        </li>
+    </ul>
+</section>
+
+</main>
+
+<!-- js -->
+<script src="javascripts/jquery-2.2.2.min.js"></script>
+<script src="javascripts/angular.min.js"></script>
+<script src="javascripts/todo.js"></script>
+
+</body>
+</html>
